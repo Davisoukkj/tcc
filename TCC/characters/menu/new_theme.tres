@@ -1,0 +1,11 @@
+[gd_resource type="Theme" load_steps=2 format=3 uid="uid://bba8b27slfs1s"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_puai1"]
+bg_color = Color(0.412983, 0, 0.0406889, 1)
+
+[resource]
+Button/font_sizes/font_size = 12
+Button/styles/focus = null
+Button/styles/hover = null
+Button/styles/normal = SubResource("StyleBoxFlat_puai1")
+Button/styles/pressed = null

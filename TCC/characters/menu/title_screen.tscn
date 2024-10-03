@@ -1,0 +1,71 @@
+[gd_scene load_steps=4 format=3 uid="uid://73kjaaobl3hf"]
+
+[ext_resource type="Texture2D" uid="uid://7h14ufkn6m5q" path="res://characters/menu/background.png" id="1_to7nt"]
+[ext_resource type="Theme" uid="uid://bba8b27slfs1s" path="res://characters/menu/new_theme.tres" id="2_5whyw"]
+[ext_resource type="Texture2D" uid="uid://cbsh4lsvdmsbv" path="res://characters/menu/logo.png" id="2_c0dfw"]
+
+[node name="TitleScreen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="bg" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 417.0
+offset_bottom = 626.0
+texture = ExtResource("1_to7nt")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -40.0
+offset_right = 112.0
+offset_bottom = 40.0
+grow_vertical = 2
+theme_override_constants/margin_left = 2
+theme_override_constants/margin_top = 10
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="start_btn" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("2_5whyw")
+text = "COMEÇAR"
+
+[node name="credits_btn" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("2_5whyw")
+text = "CRÉDITOS"
+
+[node name="controls_btn" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("2_5whyw")
+text = "CONTROLES"
+
+[node name="logo" type="TextureRect" parent="."]
+layout_mode = 2
+offset_left = 181.0
+offset_top = 5.0
+offset_right = 314.0
+offset_bottom = 177.0
+size_flags_horizontal = 8
+texture = ExtResource("2_c0dfw")
+expand_mode = 3
+stretch_mode = 4
