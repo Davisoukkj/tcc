@@ -1,8 +1,10 @@
-[gd_scene load_steps=4 format=3 uid="uid://73kjaaobl3hf"]
+[gd_scene load_steps=6 format=3 uid="uid://73kjaaobl3hf"]
 
-[ext_resource type="Texture2D" uid="uid://7h14ufkn6m5q" path="res://characters/menu/background.png" id="1_to7nt"]
-[ext_resource type="Theme" uid="uid://bba8b27slfs1s" path="res://characters/menu/new_theme.tres" id="2_5whyw"]
-[ext_resource type="Texture2D" uid="uid://cbsh4lsvdmsbv" path="res://characters/menu/logo.png" id="2_c0dfw"]
+[ext_resource type="Script" path="res://characters/menu/scripts/title_screen.gd" id="1_1hhpw"]
+[ext_resource type="Texture2D" uid="uid://7h14ufkn6m5q" path="res://characters/menu/assets/background.png" id="1_6j38l"]
+[ext_resource type="Theme" uid="uid://bba8b27slfs1s" path="res://characters/menu/text/new_theme.tres" id="2_yt7y6"]
+[ext_resource type="Texture2D" uid="uid://cbsh4lsvdmsbv" path="res://characters/menu/assets/logo.png" id="3_spbig"]
+[ext_resource type="FontFile" uid="uid://gulieo5h5317" path="res://characters/menu/text/who asks satan.ttf" id="4_wc5c5"]
 
 [node name="TitleScreen" type="Control"]
 layout_mode = 3
@@ -11,12 +13,13 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_1hhpw")
 
 [node name="bg" type="TextureRect" parent="."]
 layout_mode = 0
 offset_right = 417.0
 offset_bottom = 626.0
-texture = ExtResource("1_to7nt")
+texture = ExtResource("1_6j38l")
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 1
@@ -46,18 +49,32 @@ layout_mode = 2
 
 [node name="start_btn" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer"]
 layout_mode = 2
-theme = ExtResource("2_5whyw")
-text = "COMEÇAR"
-
-[node name="credits_btn" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer"]
-layout_mode = 2
-theme = ExtResource("2_5whyw")
-text = "CRÉDITOS"
+size_flags_vertical = 4
+theme = ExtResource("2_yt7y6")
+theme_override_fonts/font = ExtResource("4_wc5c5")
+theme_override_font_sizes/font_size = 14
+text = "Comecar"
 
 [node name="controls_btn" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer"]
 layout_mode = 2
-theme = ExtResource("2_5whyw")
-text = "CONTROLES"
+theme = ExtResource("2_yt7y6")
+theme_override_fonts/font = ExtResource("4_wc5c5")
+theme_override_font_sizes/font_size = 12
+text = "controles"
+
+[node name="credits_btn" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("2_yt7y6")
+theme_override_fonts/font = ExtResource("4_wc5c5")
+theme_override_font_sizes/font_size = 13
+text = "CREDIToS"
+
+[node name="quit_btn" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("2_yt7y6")
+theme_override_fonts/font = ExtResource("4_wc5c5")
+theme_override_font_sizes/font_size = 16
+text = "sair"
 
 [node name="logo" type="TextureRect" parent="."]
 layout_mode = 2
@@ -66,6 +83,11 @@ offset_top = 5.0
 offset_right = 314.0
 offset_bottom = 177.0
 size_flags_horizontal = 8
-texture = ExtResource("2_c0dfw")
+texture = ExtResource("3_spbig")
 expand_mode = 3
 stretch_mode = 4
+
+[connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/start_btn" to="." method="_on_start_btn_pressed"]
+[connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/controls_btn" to="." method="_on_controls_btn_pressed"]
+[connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/credits_btn" to="." method="_on_credits_btn_pressed"]
+[connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/quit_btn" to="." method="_on_quit_btn_pressed"]
