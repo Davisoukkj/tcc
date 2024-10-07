@@ -77,6 +77,17 @@ theme_override_fonts/font = ExtResource("4_wc5c5")
 theme_override_font_sizes/font_size = 16
 text = "sair"
 
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 28.0
+offset_top = 11.0
+offset_right = 178.0
+offset_bottom = 38.0
+theme_override_colors/font_color = Color(0.968627, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_wc5c5")
+theme_override_font_sizes/font_size = 29
+text = "ESCAPE FROM SPC"
+
 [connection signal="pressed" from="start_btn" to="." method="_on_start_btn_pressed"]
 [connection signal="pressed" from="controls_btn" to="." method="_on_controls_btn_pressed"]
 [connection signal="pressed" from="credits_btn" to="." method="_on_credits_btn_pressed"]

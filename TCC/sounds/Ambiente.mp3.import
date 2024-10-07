@@ -12,8 +12,8 @@ dest_files=["res://.godot/imported/Ambiente.mp3-78cbcc888dfdb214ab79a54ab3225119
 
 [params]
 
-loop=false
-loop_offset=0
-bpm=0
+loop=true
+loop_offset=0.0
+bpm=0.0
 beat_count=0
 bar_beats=4
