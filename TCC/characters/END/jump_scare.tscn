@@ -1,0 +1,61 @@
+[gd_scene load_steps=6 format=3 uid="uid://c030ocrx5sb44"]
+
+[ext_resource type="Theme" uid="uid://bba8b27slfs1s" path="res://characters/menu/new_theme.tres" id="1_13aep"]
+[ext_resource type="Script" path="res://characters/END/jump_scare.gd" id="1_h5t8e"]
+[ext_resource type="FontFile" uid="uid://gulieo5h5317" path="res://characters/menu/text/who asks satan.ttf" id="2_tilnc"]
+[ext_resource type="AudioStream" uid="uid://crhvag2ma5rpb" path="res://characters/END/Jumpscare Sound.mp3" id="4_qet3g"]
+[ext_resource type="Texture2D" uid="uid://dr5fkfqvfi3sx" path="res://characters/END/scare.jpg" id="5_iltpi"]
+
+[node name="Jump_scare" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_h5t8e")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 0
+offset_right = 323.0
+offset_bottom = 185.0
+color = Color(0, 0, 0, 1)
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 4.0
+offset_top = 4.0
+offset_right = 47.0
+offset_bottom = 16.0
+theme = ExtResource("1_13aep")
+theme_override_fonts/font = ExtResource("2_tilnc")
+text = "CREDITOS"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_qet3g")
+autoplay = true
+
+[node name="Scare" type="Sprite2D" parent="."]
+position = Vector2(162, 93)
+scale = Vector2(0.460417, 0.5)
+texture = ExtResource("5_iltpi")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -21.0
+offset_top = -24.0
+offset_right = 31.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_tilnc")
+theme_override_font_sizes/font_size = 23
+text = "FIM..."
+horizontal_alignment = 1
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

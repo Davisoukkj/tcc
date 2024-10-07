@@ -1,8 +1,9 @@
-[gd_scene load_steps=8 format=3 uid="uid://dkhl5mdfh81f0"]
+[gd_scene load_steps=9 format=3 uid="uid://dkhl5mdfh81f0"]
 
 [ext_resource type="PackedScene" uid="uid://b321sxsgvxs8" path="res://characters/terrain/scenes/terrain.tscn" id="1_t51pg"]
 [ext_resource type="PackedScene" uid="uid://hbp6500le5wu" path="res://scenes/character.tscn" id="2_nrxaq"]
 [ext_resource type="PackedScene" uid="uid://dn4gjptx8q7w2" path="res://characters/terrain/assets/portal/component/portal.tscn" id="3_jkkpj"]
+[ext_resource type="PackedScene" uid="uid://crrpwlg3tha4h" path="res://characters/terrain/assets/portal/component/portalEnd.tscn" id="4_bwusi"]
 [ext_resource type="AudioStream" uid="uid://dkgc5cilmgsdm" path="res://sounds/Ambiente.mp3" id="4_yqnd7"]
 [ext_resource type="AudioStream" uid="uid://bqjjd6vxfc8l6" path="res://sounds/Coração.mp3" id="5_6ajdi"]
 
@@ -60,14 +61,13 @@ scale = Vector2(1, 0.722656)
 energy = 1.15
 texture = SubResource("GradientTexture2D_n35dy")
 
-[node name="Portal3" parent="Conponents" instance=ExtResource("3_jkkpj")]
-position = Vector2(126, 460.125)
-_teleport_position = Vector2(31, 414)
+[node name="PortalEnd" parent="Conponents" instance=ExtResource("4_bwusi")]
+position = Vector2(125, 458)
 
 [node name="PointLight2D3" type="PointLight2D" parent="Conponents"]
 show_behind_parent = true
 z_index = -1
-position = Vector2(130, 471.125)
+position = Vector2(128, 465)
 scale = Vector2(1, 0.722656)
 energy = 1.15
 texture = SubResource("GradientTexture2D_n35dy")
